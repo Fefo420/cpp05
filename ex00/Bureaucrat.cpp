@@ -6,7 +6,7 @@
 /*   By: fefo <fefo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:20:59 by fefo              #+#    #+#             */
-/*   Updated: 2026/04/21 14:44:19 by fefo             ###   ########.fr       */
+/*   Updated: 2026/04/21 15:08:24 by fefo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,18 @@ void Bureaucrat::incrementGrade(int increment)
 {
     int final_grade = getGrade() - increment;
     setGrade(final_grade);
-    std::cout << "Grade incremented by " << increment << ". New grade: " << final_grade << std::endl;
+    std::cout << "Grade incremented by " << increment << "." << std::endl;
 }
 
 void Bureaucrat::decrementGrade(int decrement)
 {
     int final_grade = getGrade() + decrement;
     setGrade(final_grade);
-    std::cout << "Grade decremented by " << decrement << ". New grade: " << final_grade << std::endl;
+    std::cout << "Grade decremented by " << decrement << "." << std::endl;
+}
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& b)
+{
+    out << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
+    return out;
 }
