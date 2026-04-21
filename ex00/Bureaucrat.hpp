@@ -6,7 +6,7 @@
 /*   By: fefo <fefo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:20:56 by fefo              #+#    #+#             */
-/*   Updated: 2026/04/21 14:15:01 by fefo             ###   ########.fr       */
+/*   Updated: 2026/04/21 14:44:04 by fefo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class Bureaucrat
         int getGrade() const;
         void setGrade(int grade);
         int checkGrade(int grade);
+        void incrementGrade(int increment);
+        void decrementGrade(int decrement);
         class GradeTooLowException : public std::exception
         {
             public:

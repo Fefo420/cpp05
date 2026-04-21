@@ -6,7 +6,7 @@
 /*   By: fefo <fefo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:20:59 by fefo              #+#    #+#             */
-/*   Updated: 2026/04/21 14:14:55 by fefo             ###   ########.fr       */
+/*   Updated: 2026/04/21 14:44:19 by fefo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Bureaucrat::Bureaucrat() : name("Bureaucrat"), final_grade(150)
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), final_grade(grade)
 {
     checkGrade(final_grade);
-    std::cout << name << "Got Created, with a grade of " << grade << std::endl;
+    std::cout << name << " Got Created, with a grade of " << grade << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -52,4 +52,18 @@ const std::string& Bureaucrat::getName() const
 int Bureaucrat::getGrade() const 
 {
     return final_grade;
+}
+
+void Bureaucrat::incrementGrade(int increment)
+{
+    int final_grade = getGrade() - increment;
+    setGrade(final_grade);
+    std::cout << "Grade incremented by " << increment << ". New grade: " << final_grade << std::endl;
+}
+
+void Bureaucrat::decrementGrade(int decrement)
+{
+    int final_grade = getGrade() + decrement;
+    setGrade(final_grade);
+    std::cout << "Grade decremented by " << decrement << ". New grade: " << final_grade << std::endl;
 }
